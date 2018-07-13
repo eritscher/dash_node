@@ -1,0 +1,12 @@
+{
+  "name": "dash_node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "pcap": "https://github.com/mranney/node_pcap.git"
+  }
+}
