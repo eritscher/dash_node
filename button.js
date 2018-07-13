@@ -21,15 +21,22 @@ class Button extends EventEmitter {
     super();
     this.macAddress = macAddress;
     this.createSession();
+    this.debouncing = false;
   }
 
   createSession(filter) {
     this.session = pcap.createSession(null, filter);
     this.session.on('packet', (rawPacket) => {
-      const decoded = this._decodePacket(rawPacket);
-      const isValidPacket = this._filterPacket(decoded)
-      if (isValidPacket) {
-        this.emit('pressed');
+      if (!this.debouncing) {
+        const decoded = this._decodePacket(rawPacket);
+        const isValidPacket = this._filterPacket(decoded)
+        if (isValidPacket) {
+          this.emit('pressed');
+          this.debouncing = true;
+          setTimeout(() => {
+            this.debouncing === false;
+          }, 5000);
+        }
       }
     })
   }
