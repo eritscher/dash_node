@@ -21,7 +21,7 @@ class Button extends EventEmitter {
           this.emit('pressed');
           this.debouncing = true;
           setTimeout(() => {
-            this.debouncing === false;
+            this.debouncing = false;
           }, 5000);
         }
       }

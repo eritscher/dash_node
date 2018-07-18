@@ -4,9 +4,10 @@ module.exports = function convertIntToHex(intArray) {
   for (let i in intArray) {
     let currentAsHex = intArray[i].toString(16);
     if (currentAsHex.length < 2) {
-      currentAsHex = currentAsHex.padStart(1, '0');
+      currentAsHex = currentAsHex.padStart(2, '0');
     }
     hexArray.push(currentAsHex);
   }
+
   return hexArray.join(':')
 }

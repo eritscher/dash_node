@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+const pcap = require('pcap');
+const convertIntToHex = require('./helpers');
+const pcap_session = pcap.createSession();
+
+console.log("Watching for arp & udp requests on your local network, please try to press your dash now.\n");
+
+pcap_session.on('packet', (rawPacket) => {
+  const packet = pcap.decode.packet(rawPacket);
+  let protocol = null;
+  let macAddress = null;
+  if (packet.payload.ethertype === 2054) {
+    protocol = 'ARP';
+    macAddress = convertIntToHex(packet.payload.payload.sender_ha.addr);
+  } else if (packet.payload.ethertype === 2048) {
+    protocol = 'UDP';
+    macAddress = convertIntToHex(packet.payload.shost.addr);
+  }
+  if (protocol || macAddress) {
+    console.log(`MAC: ${macAddress} PROTOCOL: ${protocol}`);
+  }
+});
+
