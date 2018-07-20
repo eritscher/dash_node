@@ -44,7 +44,6 @@ class Button extends EventEmitter {
                         address: targetMacOrFalse,
                         name: this.macAddresses[targetMacOrFalse].name
                     };
-                    console.log(decoded.payload.payload.payload.data.toString('utf-8'));
                     this.emit('pressed', emittingPayload);
                     this.macAddresses[targetMacOrFalse].debouncing = true;
 
