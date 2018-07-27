@@ -1,9 +1,9 @@
-# node_dash
+# dash_node
 
 A node implementation for finding, listening for, and responding to [Amazon Dash](https://en.wikipedia.org/wiki/Amazon_Dash "Amazon Dash") button presses.
 
 #### Details
-Node_Dash exports a single button class that can be initalized with one or many dash buttons. At minimum you need to provide the MAC address of the button(s) you are listening to.
+dash_node exports a single button class that can be initalized with one or many dash buttons. At minimum you need to provide the MAC address of the button(s) you are listening to.
 
 You can find the MAC address of a given dash button by running:
 

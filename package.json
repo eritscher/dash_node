@@ -1,6 +1,6 @@
 {
   "name": "dash_node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "description": "Module for listening for Amazon Dash button presses.",
