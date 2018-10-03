@@ -9,7 +9,7 @@
   },
   "homepage": "https://github.com/eritscher/dash_node",
   "dependencies": {
-    "pcap": "https://github.com/mranney/node_pcap.git"
+    "pcap": "2.0.0"
   },
   "devDependencies": {
     "eslint": "^5.1.0"
