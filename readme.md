@@ -1,3 +1,8 @@
+# Rust Version
+I made a better version of this utility written in Rust. Why is it better? Because Rust is cool and far better then JavaScript at dealing with lower-level networking. 
+
+See it [here](https://github.com/eritscher/dash_hue)
+
 # dash_node
 
 A node implementation for finding, listening for, and responding to [Amazon Dash](https://en.wikipedia.org/wiki/Amazon_Dash "Amazon Dash") button presses.
